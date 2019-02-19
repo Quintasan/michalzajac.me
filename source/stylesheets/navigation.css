@@ -1,0 +1,21 @@
+.navbar {
+  background-color: #1c1c1c;
+  text-align: center;
+}
+
+.navbar > a {
+  color: #ffffff;
+  transition: color 0.2s ease-in-out;
+  display: inline-block;
+  padding: 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.navbar > a:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+a { color: #b38044; }
+
+.navbar > a:hover { color: #b38044;}

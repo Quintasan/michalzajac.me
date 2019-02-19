@@ -1,0 +1,9 @@
+= wrap_layout :common do
+  = stylesheet_link_tag "normalize"
+  = stylesheet_link_tag "site"
+  = javascript_include_tag "site"
+  %body
+    .wrapper
+      %section.hero
+        = partial "navigation"
+        = yield

@@ -1,0 +1,9 @@
+.post {
+  padding: 1rem 0 0 1rem;
+}
+
+@media (min-width: 955px) {
+  .post {
+    padding: 2rem 20rem 0 20rem;
+  }
+}

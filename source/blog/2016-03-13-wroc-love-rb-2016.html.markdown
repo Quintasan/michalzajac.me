@@ -1,0 +1,27 @@
+---
+title: wroc_love.rb 2016
+author: Michał Zając
+tags: ramblings
+---
+
+This year I decided to attend more IT related events so I went to [wroc_love.rb](www.wrocloverb.com) conference first.
+While the conference is aimed at Ruby programmers the topics ranged from Ruby through general object oriented
+programming, DevOps and even coffee. I also finally decided to give a lightning talk (it didn't go that well but I don't
+think it was a total disaster). I enjoyed two talks in particular one about NixOS and the other one about Liskov
+substitution principle.
+
+## The NixOS Project and deploying systems declaratively
+
+[Sander van der Burg](http://sandervanderburg.nl) gave a very interesting talk about NixOS, how it works,
+how it deals with complexity involed when deploying applications to production servers, rollbacks, compatibility,
+reproducibility. I have been contemplating using NixOS quite a few times but could never bring myself to try something
+more practical. Sander's talk shed some insight on how NixOS can be used in practice. A very interesting talk for people
+involved in DevOps.
+
+## Lessons of Liskov
+
+[Peter Bhat Harkins](https://www.valent.io/) explained Liskov Substitution Principle succintly and presented examples of
+why `nil` is a bad idea, why do we have callbacks everywhere in Rails, how to avoid getting exceptions in strange places
+and how to write software that doesn't feel brittle. In my opinion it was the best talk on the conference - it
+concentrated on Ruby but the principles presented can be applied elsewhere and make you a better programmer overall. I
+really recommend watching it when the videos are available.

@@ -1,0 +1,13 @@
+!!!
+%html{:lang => "pl"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title= "Michał Zając - #{current_page.data.title || 'homepage'}"
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => "My homepage and a simple blog", :name => "description"}/
+    %meta{:content => "Michał Zając", :name => "author"}/
+    %link{:href => "humans.txt", :rel => "author"}/
+    = stylesheet_link_tag "navigation"
+    = stylesheet_link_tag "typography"
+    = stylesheet_link_tag "common"
+    = yield

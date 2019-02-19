@@ -1,0 +1,10 @@
+%section
+  %p I sometimes try to write about things I find interesting. I probably suck at writing but maybe I'll get better at it
+
+%section
+  %h1 Recent posts
+  %ul
+    - blog.articles.each do |article|
+      %li
+        %a{href: article.url}= article.title
+

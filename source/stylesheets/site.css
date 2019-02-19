@@ -1,0 +1,57 @@
+.split {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.split > * {
+  flex: 1 100%;
+}
+
+.split > .hero-photo {
+  background-image: url("/images/me1x.jpg");
+  background-image: image-set(
+    url("/images/me1x.jpg") 1x,
+    url("/images/me2x.jpg") 2x
+  );
+  background-position: center;
+  background-size: cover;
+  min-height: 20rem;
+  flex-grow: 1;
+}
+
+.split > .hero-description {
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+.hero-description > p {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.social-icon { width: 3vw; }
+
+@media (min-width: 955px) {
+  .split {
+    flex-direction: row;
+    flex-grow: 1;
+  }
+
+  .split > * {
+    flex: 1 0 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  .hero-description > h1 {
+    font-size: 5rem;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  .hero-description > p {
+    line-height: 2;
+  }
+}
