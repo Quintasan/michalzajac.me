@@ -1,0 +1,15 @@
+---
+title: Mizuwari
+author: Michał Zając
+tags: cocktails
+---
+
+Mizuwari (水割り) is a way of drinking whiskey or shouchu. Ingredient-wise it's basically whisky, water and ice. The interesting part is that it calls for a precise number of stirs at certain stages of making the cocktail. This is corroborated by [Nonjatta](https://www.nonjatta.com/2007/05/how-to-make-mizuwari.html), [The Whiskypedia](https://thewhiskypedia.com/whisky-stories/mizuwari-art-japanese-highball), [The Star Online](https://www.thestar.com.my/lifestyle/viewpoints/tipsy-turvy/2014/01/12/the-nippon-way/) and [many](https://cocktailcollective.com.au/recipe/highball-mizuwari/) [others](https://www.cocktailchemistrylab.com/home/japanese-highball).
+
+The number of stirs given by most sources is 13 and half after you pour whisky over the ice and three and a half times after you add water. Nonjatta in his blog post quotes [Nikkei mizuwari](http://weblogs.nikkeibp.co.jp/whisky/2005/01/whisky_n_water.html) and [Suntory mizuwari](http://www5e.biglobe.ne.jp/~iwaki/mizuwari.JPG) but none of the links are alive anymore. The last quoted page is Japanese Wikipedia for [水割り](https://ja.wikipedia.org/wiki/%E6%B0%B4%E5%89%B2%E3%82%8A) which contains no references.
+
+Another source I found - [Alcademics](https://www.alcademics.com/2011/06/mizuwari-japanese-whisky-highball-ritual.html) quotes Neyah White, Suntory brand ambassador. Off to the Suntory [page](https://www.suntory.co.jp/whisky/beginner/drink/water.html) we go. Strangely enough, Suntory's page tells you to „gently stir” the cocktail.
+
+Extensive googling provided me with another possible source *Japanese Cocktails* by *Yuri Kato* ([Amazon](https://www.amazon.com/Japanese-Cocktails-Yuri-Kato/dp/0811875113)) which is mostly sold out or fetches incredible prices (100+ USD for a copy) so that's out.
+
+Where does the recipe come from then? Is there any reason for the exact number of stirs or is it there for the ceremony itself?
