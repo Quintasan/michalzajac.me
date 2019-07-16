@@ -1,0 +1,36 @@
+@import url(https://fonts.googleapis.com/css?family=Lora&subset=latin,latin-ext);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lora';
+  font-style: normal;
+  font-size: $base-font-size;
+  font-weight: 500;
+  line-height: $base-line-height;
+  text-align: left;
+  text-decoration: none;
+  text-transform: none;
+  font-feature-settings: "kern", "liga", "pnum";
+  color: #333;
+  margin: 0;
+
+  @media #{$mq-medium} {
+    font-size: $base-font-size*1.2;
+    line-height: $base-line-height*1.2;
+  }
+
+  @media #{$mq-large} {
+    font-size: $base-font-size*1.3;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: $base-font-size*1.4;
+  }
+
+  @media #{$mq-xxlarge} {
+    font-size: $base-font-size*1.6;
+  }
+}
