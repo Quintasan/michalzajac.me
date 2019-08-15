@@ -3,7 +3,7 @@ require 'pry'
 helpers ArticleHelpers
 
 page "/", layout: "home_page_layout"
-page "/blog.html", layout: "post_layout"
+page "/blog.html", layout: "blog_layout"
 page "/talks.html", layout: "post_layout"
 
 activate :external_pipeline,

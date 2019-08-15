@@ -4,4 +4,7 @@
       = partial "navigation"
       .post
         %article
+          %header
+            = link_to "Back", "/blog"
+            %h1= current_page.data.title
           = yield
