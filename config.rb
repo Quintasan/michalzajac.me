@@ -1,3 +1,4 @@
+
 require 'lib/article_helpers'
 require 'pry'
 helpers ArticleHelpers
@@ -18,6 +19,12 @@ activate :blog do |blog|
 end
 
 activate :directory_indexes
+
+configure :build do
+  activate :minify_css
+  activate :minify_javascript
+  activate :minify_html
+end
 
 activate :deploy do |deploy|
   deploy.deploy_method = :rsync
