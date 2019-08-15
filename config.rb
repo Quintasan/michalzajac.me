@@ -17,6 +17,8 @@ activate :blog do |blog|
   blog.layout = "post_layout"
 end
 
+activate :directory_indexes
+
 activate :deploy do |deploy|
   deploy.deploy_method = :rsync
   deploy.host = "michalzajac.me"
