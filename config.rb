@@ -1,4 +1,5 @@
 require 'lib/article_helpers'
+require 'pry'
 helpers ArticleHelpers
 
 page "/", layout: "home_page_layout"

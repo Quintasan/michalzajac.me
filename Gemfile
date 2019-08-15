@@ -6,3 +6,6 @@ gem 'middleman-deploy', git: "https://github.com/graygilmore/middleman-deploy.gi
 gem 'nokogiri'
 gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 gem 'wdm', '~> 0.1', platforms: [:mswin, :mingw]
+gem "pry"
+gem "byebug"
+gem "pry-byebug"
