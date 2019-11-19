@@ -33,6 +33,12 @@
 
 .social-icon { width: 3vw; }
 
+@media #{$mq-medium} {
+  .split > .hero-description {
+    padding: 2rem 2rem 2rem 6rem;
+  }
+}
+
 @media (min-width: 955px) {
   .split {
     flex-direction: row;
@@ -53,5 +59,11 @@
 
   .hero-description > p {
     line-height: 2;
+  }
+}
+
+@media #{$mq-xxlarge} {
+  .hero-description > p {
+    font-size: 1.7rem;
   }
 }
