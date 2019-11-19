@@ -42,7 +42,7 @@ reads way better than all those `yield_self`.
 
 Ruby 2.6 has an initial version of a JIT compiler written by Vladimir Makarov. While definitely a [big step](https://gist.github.com/k0kubun/d7f54d96f8e501bbbc78b927640f4208) for Ruby in terms of CPU performance it apparently makes Rails [run slower](https://github.com/ruby/ruby/commit/ed935aa5be0e5e6b8d53c3e7d76a9ce395dfa18b). I'll probably conduct some benchmarks on my own but I think I'll steer clear of the JIT for now.
 
-# `RubyVM::AbstractSyntaxTree` module
+# RubyVM::AbstractSyntaxTree module
 
 This one has a `#parse` and a `#parse_file` methods which basically take a `String` or a `File`, parse it as Ruby code and return an Abstract Syntax Tree nodes of the code.
 
