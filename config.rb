@@ -1,7 +1,8 @@
-
 require 'lib/article_helpers'
 require 'pry'
 helpers ArticleHelpers
+
+set :markdown_engine, :common_marker
 
 page "/", layout: "home_page_layout"
 page "/blog.html", layout: "blog_layout"

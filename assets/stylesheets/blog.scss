@@ -1,5 +1,6 @@
 .post {
-  padding: 1rem 0 0 1rem;
+  padding: 1rem 1rem 1rem 1rem;
+  word-wrap: break-word;
 }
 
 .title {
@@ -11,6 +12,10 @@
   padding: 0;
   margin: $base-font-size*0.2 0 0 0;
   font-size: $base-font-size*0.8;
+}
+
+pre {
+  overflow-x: scroll;
 }
 
 @media (min-width: 955px) {

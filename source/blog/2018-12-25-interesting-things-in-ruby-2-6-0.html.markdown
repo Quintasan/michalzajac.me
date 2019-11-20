@@ -5,7 +5,7 @@ tags: ruby
 ---
 
 Every year matz gives every Ruby programmer a present on December 25th. This year is no exception and Ruby 2.6.0 was
-released and brings a slew of new features. The changelog is available on [ruby-lang.org](https://www.ruby-lang.org/en/news/2018/12/25/ruby-2-6-0-released/) and I decided about a subset of new features which might are of particular interest to me.
+released and brings a slew of new features. The changelog is available on [ruby-lang.org](https://www.ruby-lang.org/en/news/2018/12/25/ruby-2-6-0-released/) and I decided to write about a subset of new features which are of particular interest to me.
 
 # Bundler is now installed as a default gem.
 

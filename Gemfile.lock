@@ -24,6 +24,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    commonmarker (0.20.1)
+      ruby-enum (~> 0.5)
     concurrent-ruby (1.1.5)
     contracts (0.13.0)
     dotenv (2.7.5)
@@ -111,6 +113,8 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    ruby-enum (0.7.2)
+      i18n
     sassc (2.2.1)
       ffi (~> 1.9)
     servolux (0.13.0)
@@ -128,6 +132,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  commonmarker
   middleman (~> 4.2)
   middleman-blog (~> 4.0)
   middleman-deploy!

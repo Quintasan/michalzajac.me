@@ -6,6 +6,6 @@ title: Blog
   %h1 Recent posts
   - blog.articles.each do |article|
     %h2.title
-      %a{href: article.url}= article.title
+      = link_to article.title, article.url
     %h3.date= article.date.strftime("%F")
     %p= excerpt(article)
