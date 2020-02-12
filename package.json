@@ -1,21 +1,23 @@
 {
   "name": "assets",
-  "private": true,
-  "engines": {
-    "node": ">= 0.10"
-  },
-  "scripts": {
-    "build": "broccoli build",
-    "serve": "broccoli serve"
+  "version": "0.0.1",
+  "dependencies": {
+    "highlight.js": "^9.18.1"
   },
   "devDependencies": {
-    "broccoli": "^3.1.2",
-    "broccoli-cli": "^1.0.0",
-    "broccoli-concat": "^3.7.3",
-    "broccoli-funnel": "^2.0.2",
-    "broccoli-merge-trees": "^3.0.2",
-    "broccoli-sass-source-maps": "^4.0.0",
-    "broccoli-uglify-sourcemap": "^3.1.1",
-    "sass": "^1.22.5"
+    "css-loader": "^3.4.2",
+    "file-loader": "^5.0.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "postcss-flexbugs-fixes": "^4.2.0",
+    "postcss-loader": "^3.0.0",
+    "precss": "^4.0.0",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "start": "webpack --watch --progress --color",
+    "build": "webpack --bail -p"
   }
 }
