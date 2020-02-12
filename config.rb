@@ -3,6 +3,7 @@ require 'pry'
 helpers ArticleHelpers
 
 set :markdown_engine, :common_marker
+activate :directory_indexes
 
 page "/", layout: "home_page_layout"
 page "/blog.html", layout: "blog_layout"
@@ -18,8 +19,6 @@ activate :blog do |blog|
   blog.prefix = "blog"
   blog.layout = "post_layout"
 end
-
-activate :directory_indexes
 
 configure :build do
   activate :minify_css
