@@ -10,10 +10,10 @@
 }
 
 .split > .hero-photo {
-  background-image: url("/images/me1x.jpg");
+  background-image: url("../images/me1x.jpg");
   background-image: image-set(
-    url("/images/me1x.jpg") 1x,
-    url("/images/me2x.jpg") 2x
+    url("../images/me1x.jpg") 1x,
+    url("../images/me2x.jpg") 2x
   );
   background-position: center;
   background-size: cover;

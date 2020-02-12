@@ -10,10 +10,13 @@ page "/blog.html", layout: "blog_layout"
 page "/talks.html", layout: "post_layout"
 
 activate :external_pipeline,
-  name: :broccoli,
-  command: (build? ? 'yarn broccoli build tmp/assets' : 'yarn broccoli serve --output-path=tmp/assets'),
-  source: "tmp/assets",
-  latency: 2
+   name: :webpack,
+   command: build? ? 'npm run build' : 'npm run start',
+   source: '.tmp/dist',
+   latency: 1
+
+config[:js_dir] = 'assets/javascripts'
+config[:css_dir] = 'assets/stylesheets'
 
 activate :blog do |blog|
   blog.prefix = "blog"
@@ -21,8 +24,6 @@ activate :blog do |blog|
 end
 
 configure :build do
-  activate :minify_css
-  activate :minify_javascript
   activate :minify_html
 end
 
