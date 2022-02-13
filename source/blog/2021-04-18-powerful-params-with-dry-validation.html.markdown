@@ -70,14 +70,14 @@ I am a firm believer of "skinny controllers" but I see two approaches here:
 1. Call the contract inside your controller methods and pass valid parameters to your service objects (you're using service objects, right?)
 2. Call the contract inside your service object and extend it to return validation errors
 
-When I'm working on a greenfield project the best choice is the second one but I can see merit in the first approach. There's no need to refactor everything when you are trying to integrate dry-validation into an existing project.
+When I'm working on a greenfield project the best choice is the second one but I can see merit in the first approach. There's no need to refactor everything right away when you are trying to integrate dry-validation into an existing project.
 
 ## Enforcing contract usage in controllers
 
 The best mechanism to enforce contract usage I found so far consists of two components:
 
 1. Defining a `#contract` method on `ApplicationController` and overriding that method in every controller.
-2. A Rubocop rule to disallow using plain `params` unless they are passed to a `Contract` class.
+2. A Rubocop rule to disallow using plain `params` unless they are passed to `#call` class.
 
 ### ApplicationController and contracts
 
@@ -109,4 +109,4 @@ Besides `NotImplementedError` has a [totally different meaning](https://ruby-doc
 
 ### Rubocop cop
 
-This is a tough cookie and the only thing I can say at this moment is that I am still working on a cop that should work in most contexts and doesn't rely on class naming
+This is a tough cookie and the only thing I can say at this moment is that I am still working on a cop that should work in most contexts and doesn't rely on class naming. My rough idea here is to forbid using `params` except when passed to `#call`. Not exactly ideal but should work. You can of course violate this in many ways but I think the idea is to catch unintentional violations.
