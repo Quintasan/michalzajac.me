@@ -25,8 +25,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    commonmarker (0.21.0)
-      ruby-enum (~> 0.5)
+    commonmarker (0.23.6)
     concurrent-ruby (1.1.10)
     contracts (0.13.0)
     dotenv (2.7.6)
@@ -118,8 +117,6 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rexml (3.2.5)
-    ruby-enum (0.8.0)
-      i18n
     sassc (2.4.0)
       ffi (~> 1.9)
     servolux (0.13.0)
