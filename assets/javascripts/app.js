@@ -1,8 +1,8 @@
-import hljs from 'highlight.js/lib/highlight';
+import 'highlight.js';
 import ruby from 'highlight.js/lib/languages/ruby';
 import sql from 'highlight.js/lib/languages/sql';
 import json from 'highlight.js/lib/languages/json';
-import 'highlight.js/styles/railscasts.css';
+import 'highlight.js/styles/base16/railscasts.css';
 
 hljs.registerLanguage('ruby', ruby);
 hljs.registerLanguage('sql', sql);
