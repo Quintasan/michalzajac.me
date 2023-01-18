@@ -29,6 +29,7 @@ GEM
       ruby-enum (~> 0.5)
     concurrent-ruby (1.1.10)
     contracts (0.13.0)
+    date (3.3.3)
     dotenv (2.7.6)
     erubis (2.7.0)
     execjs (2.8.1)
@@ -93,6 +94,11 @@ GEM
       middleman-core (>= 3.2)
     mini_portile2 (2.4.0)
     minitest (5.15.0)
+    net-ftp (0.2.0)
+      net-protocol
+      time
+    net-protocol (0.2.1)
+      timeout
     net-sftp (3.0.0)
       net-ssh (>= 5.0.0, < 7.0.0)
     net-ssh (6.0.2)
@@ -126,6 +132,9 @@ GEM
     temple (0.8.2)
     thor (1.2.1)
     tilt (2.0.10)
+    time (0.2.1)
+      date
+    timeout (0.3.1)
     toml (0.3.0)
       parslet (>= 1.8.0, < 3.0.0)
     tzinfo (2.0.4)
@@ -145,6 +154,7 @@ DEPENDENCIES
   middleman-blog (~> 4.0)
   middleman-deploy!
   middleman-minify-html
+  net-ftp
   nokogiri
   pry
   pry-byebug

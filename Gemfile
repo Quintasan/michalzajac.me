@@ -11,3 +11,4 @@ gem 'wdm', '~> 0.1', platforms: [:mswin, :mingw]
 gem "pry"
 gem "byebug"
 gem "pry-byebug"
+gem "net-ftp"
