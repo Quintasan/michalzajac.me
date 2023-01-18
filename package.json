@@ -2,6 +2,8 @@
   "name": "assets",
   "version": "0.0.1",
   "dependencies": {
+    "esbuild": "^0.17.2",
+    "esbuild-sass-plugin": "^2.4.5",
     "highlight.js": "^11.7.0"
   },
   "devDependencies": {
@@ -17,7 +19,7 @@
     "webpack-cli": "^5.0.0"
   },
   "scripts": {
-    "start": "webpack --mode=development --watch --progress --color",
-    "build": "webpack --mode=production --bail -p"
+    "start": "WATCH=1 node esbuild.mjs",
+    "build": "node esbuild.mjs"
   }
 }
