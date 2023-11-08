@@ -7,12 +7,12 @@
     "highlight.js": "^11.7.0"
   },
   "devDependencies": {
-    "css-loader": "^3.4.2",
+    "css-loader": "^6.8.1",
     "file-loader": "^5.0.2",
     "mini-css-extract-plugin": "^2.7.2",
     "node-sass": "^8.0.0",
-    "postcss-flexbugs-fixes": "^4.2.0",
-    "postcss-loader": "^3.0.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-loader": "^7.3.3",
     "precss": "^4.0.0",
     "sass-loader": "^13.2.0",
     "webpack": "^5.0.0",

@@ -7,6 +7,7 @@ activate :directory_indexes
 
 page '/', layout: 'home_page_layout'
 page '/blog.html', layout: 'blog_layout'
+page '/photos.html', layout: 'blog_layout'
 page '/talks.html', layout: 'post_layout'
 
 activate :external_pipeline,
