@@ -2,7 +2,7 @@
   "name": "assets",
   "version": "0.0.1",
   "dependencies": {
-    "esbuild": "^0.17.2",
+    "esbuild": "^0.19.4",
     "esbuild-sass-plugin": "^2.4.5",
     "highlight.js": "^11.7.0"
   },
