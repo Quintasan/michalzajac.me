@@ -6,11 +6,11 @@
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %meta{:content => "My homepage and a simple blog", :name => "description"}/
     %meta{:content => "Michał Zając", :name => "author"}/
-    %link(crossorigin){:href => "https://fonts.gstatic.com", :rel => "preconnect"}/
-    %link{:href => "https://fonts.googleapis.com/css2?family=Lora&display=swap", :rel => "stylesheet"}
-    %link{:href => "https://fonts.googleapis.com/css2?family=Lora&display=swap", :rel => "stylesheet", :media => "print", :onload => "this.media='all'"}
+    %link{rel: "preconnect", href: "https://fonts.googleapis.com"}
+    %link(crossorigin){rel: "preconnect", href:"https://fonts.gstatic.com"}
+    %link{href: "https://fonts.googleapis.com/css2?family=Lora&display=swap", rel: "stylesheet", media: "print", onload: "this.onload=null;this.removeAttribute('media');", fetchpriority: "high"}
     %link{:href => "humans.txt", :rel => "author"}/
     %link{:rel => "me", :href => "https://ruby.social/@quintasan"}/
     = stylesheet_link_tag "app"
-    = javascript_include_tag "app"
+    = javascript_include_tag "app", async: true, defer: true
     = yield

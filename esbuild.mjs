@@ -6,7 +6,12 @@ let config = {
     './assets/javascripts/app.js',
   ],
   outdir: "dist",
+  treeShaking: true,
+  minify: true,
   bundle: true,
+  drop: [
+    "debugger",
+  ],
   loader: {
     ".webp": "file",
     ".svg": "file"
