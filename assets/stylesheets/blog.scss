@@ -1,3 +1,6 @@
+@import url('light_syntax.css');
+@import url('dark_syntax.css') (prefers-color-scheme: dark);
+
 .post {
   padding: 1rem 1rem 1rem 1rem;
   word-wrap: break-word;
@@ -16,6 +19,25 @@
 
 pre {
   overflow-x: scroll;
+}
+
+div.highlight {
+  margin: 0;
+  padding: 0.6em;
+  position: relative;
+}
+div.highlight pre {
+  margin: 0;
+}
+
+div.highlight pre::before {
+  color: var(--dim-text-color);
+  content: attr(class);
+  font-family: var(--cursive-font), cursive;
+  font-size: 0.8em;
+  position: absolute;
+  right: 0.3em;
+  top: -0.3em;
 }
 
 @media (min-width: 955px) {

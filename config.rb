@@ -2,7 +2,11 @@ require 'lib/article_helpers'
 require 'pry'
 helpers ArticleHelpers
 
-set :markdown_engine, :common_marker
+activate :syntax do |syntax|
+  syntax.css_class = ""
+end
+set :markdown_engine, :redcarpet
+set :markdown, :fenced_code_blocks => true, :smartypants => true
 activate :directory_indexes
 
 page '/', layout: 'home_page_layout'

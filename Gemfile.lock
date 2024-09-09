@@ -90,6 +90,9 @@ GEM
     middleman-minify-html (3.4.1)
       htmlcompressor (~> 0.2.0)
       middleman-core (>= 3.2)
+    middleman-syntax (3.4.0)
+      middleman-core (>= 3.2)
+      rouge (~> 3.2)
     mini_portile2 (2.8.7)
     minitest (5.25.1)
     net-ftp (0.3.7)
@@ -123,8 +126,10 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.11.1)
       ffi (~> 1.0)
+    redcarpet (3.6.0)
     rexml (3.3.5)
       strscan
+    rouge (3.30.0)
     sassc (2.4.0)
       ffi (~> 1.9)
     servolux (0.13.0)
@@ -152,10 +157,12 @@ DEPENDENCIES
   middleman-blog
   middleman-deploy!
   middleman-minify-html
+  middleman-syntax (~> 3.4)
   net-ftp
   nokogiri
   pry
   pry-byebug
+  redcarpet (~> 3.6)
   tzinfo-data
   wdm (~> 0.1)
 

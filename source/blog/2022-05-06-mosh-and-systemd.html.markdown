@@ -19,7 +19,7 @@ Theoretically it should be simple as:
 
 Simple, right? Alright, let's go
 
-```
+```bash
 me@client $ mosh me@server
 <nothing happens>
 
@@ -34,13 +34,13 @@ Crap. Alright, there's a [FAQ](https://mosh.org/#faq) entry for this:
 
 On the server I ran:
 
-```
+```bash
 me@server $ nc -w 0 -lu 60001
 ```
 
 and then on the client:
 
-```
+```bash
 me@client $ nc -w 0 -u 100.98.222.87 60001 <<EOF
 hello
 EOF
@@ -48,11 +48,11 @@ EOF
 
 and sure enough, I did see `hello` on the server:
 
-```
+```bash
 me@server $ nc -w 0 -lu 60001
 hello
 
-me@server $
+me@server $ 
 ```
 
 Clearly it's something else...
@@ -61,7 +61,7 @@ Clearly it's something else...
 
 Maybe some packets are not making it through? Time to whip out tcpdump:
 
-```
+```bash
 me@client $ sudo tcpdump -eni tailscale0 port 60001
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on tailscale0, link-type RAW (Raw IP), capture size 262144 bytes
@@ -90,7 +90,7 @@ listening on tailscale0, link-type RAW (Raw IP), capture size 262144 bytes
 
 also make sure it's running on the server so we can determine if everything works nice:
 
-```
+```bash
 me@server $ sudo tcpdump -eni tailscale0 port 60001
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on tailscale0, link-type RAW (Raw IP), capture size 262144 bytes
@@ -123,8 +123,8 @@ No dice, everything goes through but I'm still seeing `Nothing received from the
 
 Actually `mosh` is just a wrapper that connects via SSH and starts `mosh-server` on the server, gets an AES-128 session key and uses that to connect via `mosh-client`. Let's see if I can establish a connection:
 
-```
-me@server $ mosh-server new          
+```bash
+me@server $ mosh-server new
 
 
 MOSH CONNECT 60003 +5IhAj5k8QIoIxp7xvk7Tw
@@ -138,13 +138,13 @@ There is NO WARRANTY, to the extent permitted by law.
 [mosh-server detached, pid = 131157]
 ```
 
-```
+```bash
 me@client $ MOSH_KEY=+5IhAj5k8QIoIxp7xvk7Tw mosh-client me@server 60003
 
 Welcome to KDE neon User - Plasma 5.24 (GNU/Linux 5.4.0-109-generic x86_64)
 Last login: Fri May  6 01:26:56 2022 from 100.113.77.93
 
-me@server $
+me@server $ 
 ```
 
 Holy cow, it works!
@@ -155,19 +155,19 @@ My initial idea was that `mosh-server` was dying/crashing/being killed for some 
 
 By default `sshd` doesn't provide that much information so I started another `sshd` in debug mode
 
-```
+```bash
 me@server $ sudo /usr/sbin/sshd -4Ddep 2222
 ```
 
 and tried moshing to it
 
-```
+```bash
 me@client $ mosh --ssh="ssh -p 2222" me@server
 ```
 
 then on the server
 
-```
+```bash
 [metric crapton of debug output]
 Connection from 100.113.77.93 port 52912 on 100.98.222.87 port 2222 rdomain ""
 [more output]
@@ -180,13 +180,13 @@ Disconnected from user quintasan 100.113.77.93 port 52912
 
 off to the client we go:
 
-```
+```bash
 me@client $ mosh --ssh="ssh -p 2222" me@server
 
 Welcome to KDE neon User - Plasma 5.24 (GNU/Linux 5.4.0-109-generic x86_64)
 Last login: Fri May  6 01:26:56 2022 from 100.113.77.93
 
-me@server $
+me@server $ 
 ```
 
 Okay... what?
@@ -195,7 +195,7 @@ Okay... what?
 
 Well, time to debug what's going on with the actual `sshd` ran by systemd since I'm clearly not getting anywhere:
 
-```
+```bash
 me@server $ sudo echo 'LogLevel DEBUG3' >> /etc/ssh/sshd_config
 me@server $ sudo systemctl restart ssh.service
 me@server $ journalctl -fu ssh.service
@@ -203,7 +203,7 @@ me@server $ journalctl -fu ssh.service
 
 It's time to connect and inspect the logs:
 
-```
+```bash
 maj 06 00:07:07 shurelia sshd[107281]: Connection from 100.113.77.93 port 43280 on 100.98.222.87 port 22 rdomain ""
 
 [metric crapton of debug output]
@@ -227,14 +227,14 @@ At this point I'm pretty much sure it's PAM killing all processes. But why would
 
 My journey came to an abrupt end by Googling `pam killing mosh-server` which returned a link to [Unable to connect since recently](https://github.com/mobile-shell/mosh/issues/730) (March 2016) which quickly points out that the culprit is `systemd-logind` which kills all remaining processes when session closes if `KillUserProcesses` is set to `yes` in `/etc/systemd/logind.conf`.
 
-```
+```bash
 me@server $ cat /etc/systemd/logind.conf | grep KillUserProcesses
 #KillUserProcesses=no
 ```
 
 Hm, maybe it's yes by default. I uncommented it, did `sudo systemctl restart systemd-logind.service` and tried Mosh again:
 
-```
+```bash
 me@client $ mosh me@server
 <nothing happens>
 
@@ -243,20 +243,20 @@ Nothing received from the server on UDP port 60003
 
 Well. That didn't go well. I quickly found [/etc/systemd/logind.conf is being ignored](https://superuser.com/questions/1605504/etc-systemd-logind-conf-is-being-ignored) and tried `busctl` command to read the configuration
 
-```
+```bash
 me@server $ busctl get-property org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager KillUserProcesses
 b true
 ```
 
 Okay, whatever. There's also `KillExcludeUsers=root` in `/etc/systemd/logind.conf` to which I added myself, restarted `systemd-logind.service` and...
 
-```
+```bash
 me@client $ mosh me@server
 
 Welcome to KDE neon User - Plasma 5.24 (GNU/Linux 5.4.0-109-generic x86_64)
 Last login: Fri May  6 01:26:56 2022 from 100.113.77.93
 
-me@server $
+me@server $ 
 ```
 
 ## What does this mean?

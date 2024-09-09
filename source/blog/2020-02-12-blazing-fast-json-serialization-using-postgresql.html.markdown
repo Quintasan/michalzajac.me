@@ -36,7 +36,7 @@ SELECT json_agg(all_cocktails) FROM all_cocktails;
 
 The result of this query will be one column named `all_cocktails` which will have one row, containing our JSON array.
 
-```
+```sql
 cocktails
 -----------
 [{"id":1,"name":"Moscow Mule","youtube_link":"","ingredients":"","glassware":"","technique":"","garnish":"","signature":false,"menu":false,"category_id":1,"created_at":"2020-01-23T07:30:56.119767","updated_at":"2020-01-23T07:30:56.119767","image_data":null,"uuid":"128db793-8e1b-44cd-b6e6-3df51210331b"}, 
@@ -49,7 +49,7 @@ cocktails
 
 Some time ago I read an [article](https://medium.com/@hakibenita/be-careful-with-cte-in-postgresql-fca5e24d2119) about PostgreSQL CTE's having poor performance when compared to subqueries. However, since PostgreSQL 12 you can force Postgres not to materialize the CTE using `NOT MATERIALIZED` after the `AS` keyword.
 
-```
+```sql
 playground=# EXPLAIN ANALYZE with cte as (select * from foo) select * from cte where id = 500000;
                                                    QUERY PLAN
 ----------------------------------------------------------------------------------------------------------------
