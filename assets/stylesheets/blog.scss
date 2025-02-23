@@ -30,6 +30,16 @@ div.highlight pre {
   margin: 0;
 }
 
+img {
+  max-width: 100%;
+  max-width: -webkit-fill-available;
+  max-width: -moz-available;
+
+  min-width: 100%;
+  min-width: -webkit-fill-available;
+  min-width: -moz-available;
+}
+
 div.highlight pre::before {
   color: var(--dim-text-color);
   content: attr(class);

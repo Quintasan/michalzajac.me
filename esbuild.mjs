@@ -14,7 +14,8 @@ let config = {
   ],
   loader: {
     ".webp": "file",
-    ".svg": "file"
+    ".svg": "file",
+    ".jpg": "file"
   },
   plugins: [
     sassPlugin()
