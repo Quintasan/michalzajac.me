@@ -3,15 +3,11 @@ import { sassPlugin } from "esbuild-sass-plugin";
 
 let config = {
   entryPoints: [
-    './assets/javascripts/app.js',
+    './assets/stylesheets/app.scss',
   ],
   outdir: "dist",
-  treeShaking: true,
   minify: true,
   bundle: true,
-  drop: [
-    "debugger",
-  ],
   loader: {
     ".webp": "file",
     ".svg": "file",

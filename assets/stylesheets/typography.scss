@@ -1,3 +1,6 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+
 * {
   box-sizing: border-box;
 }
@@ -8,13 +11,10 @@
 
 body {
   font-family: 'Lora';
-  font-style: normal;
   font-size: $base-font-size;
   font-weight: 400;
   line-height: $base-line-height;
   text-align: left;
-  text-decoration: none;
-  text-transform: none;
   font-feature-settings: "kern", "liga", "pnum";
   color: #333;
   margin: 0;

@@ -1,4 +1,5 @@
 require 'lib/article_helpers'
+require 'lib/padrino_haml_compat'
 require 'pry'
 helpers ArticleHelpers
 

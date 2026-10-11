@@ -15,3 +15,6 @@ gem "net-ftp"
 gem "middleman-syntax", "~> 3.4"
 gem "redcarpet", "~> 3.6"
 gem 'builder'
+# Default gems removed in Ruby 4.0, still required by middleman's dependencies
+# (ostruct <- servolux)
+gem 'ostruct'

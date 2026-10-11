@@ -1,8 +1,10 @@
+@use "./variables" as *;
+
 @import url('light_syntax.css');
 @import url('dark_syntax.css') (prefers-color-scheme: dark);
 
 .post {
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 1rem;
   word-wrap: break-word;
 }
 
@@ -41,9 +43,7 @@ img {
 }
 
 div.highlight pre::before {
-  color: var(--dim-text-color);
   content: attr(class);
-  font-family: var(--cursive-font), cursive;
   font-size: 0.8em;
   position: absolute;
   right: 0.3em;

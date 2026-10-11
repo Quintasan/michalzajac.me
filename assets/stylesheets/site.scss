@@ -1,3 +1,5 @@
+@use "./breakpoints" as *;
+
 .split {
   display: flex;
   flex-direction: column;
