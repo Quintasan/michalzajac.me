@@ -1,5 +1,5 @@
 !!!
-%html{:lang => "pl"}
+%html{:lang => "en"}
   %head
     %meta{:charset => "utf-8"}/
     %title= "Michał Zając - #{current_page.data.title || 'homepage'}"
@@ -8,9 +8,9 @@
     %meta{:content => "Michał Zając", :name => "author"}/
     %link{rel: "preconnect", href: "https://fonts.googleapis.com"}
     %link(crossorigin){rel: "preconnect", href:"https://fonts.gstatic.com"}
-    %link{href: "https://fonts.googleapis.com/css2?family=Lora&display=swap", rel: "stylesheet", media: "print", onload: "this.onload=null;this.removeAttribute('media');", fetchpriority: "high"}
-    %link{:href => "humans.txt", :rel => "author"}/
+    %link{href: "https://fonts.googleapis.com/css2?family=Lora&display=swap", rel: "stylesheet", fetchpriority: "high"}
+    %link{:href => "/humans.txt", :rel => "author"}/
     %link{:rel => "me", :href => "https://ruby.social/@quintasan"}/
-    %link{rel: "alternate", type: "application/atom+xml", name: "Blog posts", href: "feed.xml"}/
+    %link{rel: "alternate", type: "application/atom+xml", name: "Blog posts", href: "/feed.xml"}/
     = stylesheet_link_tag "app"
     = yield
