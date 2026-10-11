@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Build the site and rsync build/ to the production host.
+#
+# This replaces middleman-deploy, which was a git fork pulled in only to run the
+# rsync below. middleman-deploy used `-avz` and appended --delete only for
+# `deploy.clean`, which was never set, so this matches the previous behaviour:
+# no --delete, meaning files deleted locally stay on the host.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+bundle exec middleman build
+rsync -avz build/ michalzajac.me:/srv/www/michalzajac.me

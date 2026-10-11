@@ -1,6 +1,5 @@
 require 'lib/article_helpers'
 require 'lib/padrino_haml_compat'
-require 'pry'
 helpers ArticleHelpers
 
 activate :syntax do |syntax|
@@ -29,11 +28,4 @@ activate :directory_indexes
 
 configure :build do
   activate :minify_html
-end
-
-activate :deploy do |deploy|
-  deploy.deploy_method = :rsync
-  deploy.host = 'michalzajac.me'
-  deploy.path = '/srv/www/michalzajac.me'
-  deploy.build_before = true
 end
